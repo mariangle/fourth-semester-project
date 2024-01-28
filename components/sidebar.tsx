@@ -1,31 +1,34 @@
 import Link from "next/link";
 
 import { UserMenu } from "@/components/user-menu";
-import { ModeToggle } from "@/components/theme-switch";
-import { Navigation } from "@/components/navigation";
+import { SideNav } from "./side-nav";
+import { MobileSidebar } from "./mobile-sidebar";
+import { Logo } from "@/components/ui/logo";
 import { CreateButton } from "@/components/create-button";
+import { ModeToggle } from "@/components/theme-switch";
 
 export function Sidebar() {
   return (
-    <aside className="w-[250px] flex flex-col py-8">
-      <div className="p-2 h-12">
-        <Link href="/" className="flex items-center gap-2 text-sm">
-          <div className="bg-gradient-to-r from-sky-600 to-blue-700 dark:from-sky-700 dark:to-blue-700 text-white h-8 w-8 flex items-center justify-center rounded-md text-center">
-            IB
-          </div>
+    <div className="p-4 flex flex-row lg:flex-col justify-between">
+      <div className="flex lg:flex-col items-center justify-between gap-4">
+        <div className="lg:hidden">
+          <MobileSidebar />
+        </div>
+        <Link href="/" className="items-center hidden lg:flex gap-2 text-sm">
+          <Logo />
           IntelligentBanker
         </Link>
-      </div>
-      <div className="p-2 flex flex-col justify-between h-full">
-        <div className="space-y-2 w-full">
+        <div className="hidden lg:flex w-full">
+          <SideNav />
+        </div>
+        <div className="flex items-center gap-4 lg:hidden">
           <CreateButton />
-          <Navigation />
-        </div>
-        <div>
-          <ModeToggle />
-          <UserMenu />
         </div>
       </div>
-    </aside>
+      <div className="flex lg:flex-col">
+        <ModeToggle />
+        <UserMenu />
+      </div>
+    </div>
   );
 }

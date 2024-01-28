@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Timer, Settings, Layers } from "lucide-react";
+import { Settings, Layers, BookText, Users } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
 const navLinks = [
@@ -13,9 +13,14 @@ const navLinks = [
     icon: Layers,
   },
   {
-    href: "/time",
-    name: "Time",
-    icon: Timer,
+    href: "/registration",
+    name: "Registration",
+    icon: BookText,
+  },
+  {
+    href: "/users",
+    name: "Users",
+    icon: Users,
   },
   {
     href: "/settings/account",
@@ -24,7 +29,7 @@ const navLinks = [
   },
 ];
 
-export function Navigation() {
+export function Navigation({ close }: { close?: () => void }) {
   const path = usePathname();
 
   return (
@@ -34,6 +39,7 @@ export function Navigation() {
           <Link
             href={link.href}
             key={index}
+            onClick={() => close && close()}
             className={cn(
               buttonVariants({
                 variant: "ghost",

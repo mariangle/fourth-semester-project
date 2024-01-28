@@ -24,7 +24,9 @@ export async function UserMenu() {
           <AvatarImage src={session?.user?.image ?? ""} alt="profile image" />
           <AvatarFallback>JD</AvatarFallback>
         </Avatar>
-        <span>{session?.user?.name}</span>
+        <span className="hidden lg:block whitespace-nowrap">
+          {session?.user?.name}
+        </span>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>{session?.user?.email}</DropdownMenuLabel>

@@ -1,8 +1,6 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { Header } from "./header";
-import { TableView } from "@/components/table-view";
-import { ViewWrapper } from "@/components/view-wrapper";
+import { ViewNavigation } from "@/components/view-navigation";
 import { CalendarView } from "@/components/calendar-view";
 import { PageHeading } from "@/components/ui/page";
 
@@ -17,12 +15,14 @@ export default async function Time() {
 
   return (
     <div className="w-full">
-      <PageHeading title="Calendar" description="Your registration." />
-      <Header />
-      <ViewWrapper
-        table={<TableView entries={entries} />}
-        calendar={<CalendarView entries={entries} />}
+      <PageHeading
+        title="Registration"
+        description="View your hours and register new ones."
       />
+      <div className="bg-gray-50 dark:bg-gray-950 border rounded-lg overflow-hidden">
+        <ViewNavigation />
+        <CalendarView entries={entries} />
+      </div>
     </div>
   );
 }

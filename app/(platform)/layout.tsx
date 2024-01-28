@@ -1,6 +1,9 @@
 import { Sidebar } from "@/components/sidebar";
 import { OverlayProvider } from "@/components/providers/OverlayProvider";
-import { BackgroundImage } from "@/components/ui/background-image";
+import {
+  BackgroundImage,
+  LightBackgroundImage,
+} from "@/components/ui/background-image";
 
 export default function Layout({
   children,
@@ -9,10 +12,11 @@ export default function Layout({
 }>) {
   return (
     <div>
+      <LightBackgroundImage blur={30} dark className="" />
       <BackgroundImage blur={30} dark className="hidden dark:block" />
-      <div className="absolute z-10 flex min-h-screen w-full overflow-x-hidden dark:bg-black/50">
+      <div className="absolute h-full z-10 flex flex-col lg:flex-row min-h-screen w-full overflow-x-hidden bg-gray-300/20 dark:bg-black/50">
         <Sidebar />
-        <div className="w-full overflow-x-auto bg-background dark:bg-black/70 rounded-lg shadow-xl p-8 m-2">
+        <div className="w-full h-full lg:h-auto overflow-x-auto bg-white/70 dark:bg-black/70 rounded-2xl ld:rounded-lg shadow-xl p-6 lg:p-8 lg:m-4 lg:ml-0">
           {children}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { Logo } from "@/components/ui/logo";
 
 // Route segment config
 export const runtime = "edge";
@@ -15,20 +16,7 @@ export default function Icon() {
   return new ImageResponse(
     (
       // ImageResponse JSX element
-      <div
-        style={{
-          background: "linear-gradient(to right, #4299e1, #1d4ed8)",
-          color: "white",
-          height: "2rem",
-          width: "2rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: "0.375rem",
-        }}
-      >
-        IB
-      </div>
+      <Logo />
     ),
     // ImageResponse options
     {

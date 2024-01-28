@@ -23,7 +23,9 @@ export default async function page() {
                 await deletePayment(payment.id);
               }}
             >
-              <Button>Delete Payment</Button>
+              <Button className="bg-gray-700 text-white hover:bg-rose-600">
+                Delete Payment
+              </Button>
             </form>
           </Alert>
           <CreditCard paymentInfo={payment} />

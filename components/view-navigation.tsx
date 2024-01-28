@@ -1,5 +1,7 @@
+"use client";
+
 import { format, addMonths, subMonths } from "date-fns";
-import { Plus, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useView } from "@/hooks/use-view";
 
@@ -7,7 +9,7 @@ export function ViewNavigation() {
   const { month, setMonth } = useView();
 
   return (
-    <div className="flex justify-between py-2 px-4 border-b">
+    <div className="flex justify-between p-2 border-b">
       <div className="flex items-center gap-3">
         <Button
           variant="outline"

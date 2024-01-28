@@ -88,7 +88,7 @@ export function EntryForm({ close, entry }: EntryFormProps) {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>
-                  Time <span className="text-blue-700">*</span>
+                  Hours <span className="text-blue-700">*</span>
                 </FormLabel>
                 <FormControl>
                   <Input placeholder="Your time" {...field} type="time" />

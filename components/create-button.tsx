@@ -9,10 +9,10 @@ export function CreateButton() {
   return (
     <Button
       variant="theme"
-      className="justify-start w-full"
+      className="justify-start w-full gap-2"
       onClick={() => setOpen(true)}
     >
-      <Plus className="w-4 h-4 mr-2" />
+      <Plus className="w-4 h-4" />
       Create entry
     </Button>
   );

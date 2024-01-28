@@ -28,7 +28,7 @@ export default async function Home() {
           </a>
           <div className="flex flex-col space-y-6 md:space-y-10 max-w-[900px]">
             <h1 className="text-5xl md:text-6xl xl:text-8xl font-medium text-white">
-              Employee Time Tracking System
+              Time Registration System
             </h1>
             <p className="text-gray-300 text-lg md:text-xl">
               Simplify and streamline your work hours with our internal time
